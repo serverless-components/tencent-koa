@@ -25,7 +25,10 @@
   },
   "eslintConfig": {
     "extends": "@serverless/eslint-config/node",
-    "root": true
+    "root": true,
+    "parserOptions": {
+      "ecmaVersion": 2017
+    }
   },
   "husky": {
     "hooks": {
