@@ -87,7 +87,7 @@ jobs:
     - name: 'Lint, Tag on version bump - Node.js v12'
       env:
         # GITHUB_TOKEN
-        # - secure: CHANGEME
+        - secure: OjSOXUWhRPUy2lQ8BcnrVpO6fzqisFh2LzSln0fOSo8pDFmKhkNsLvPufHg4SuZg+ynpV19ZXPFGAiiBAS0C0i+NUxUcunmRI+gmdobbdnMf40yw7PanqBzL33IlicsE8U/0mqC+ha7lF5zQcNLTZXzMDarKQVklqbW/GrgLy6kFmohf9dDDGxHeKtIF5qk3djiFfatNf2Q+eyNI8/nxlCFqqy0fhFQJUL2kqJTYXn8CwhIMQP3Qn3SqGTJhrjFbn0VwmKdKn/QIcaEec9m6he9gzWWIXXsB3YkPO63hm0FThqnf23Z72xfF03BrAqIkRpN5SrcpqcNgZ1KVd2lEnXG6uBYCGpK2kG/qNEYuKI7edv+Ns6G7i/DuStL7l82jvnedyjYgFYjXMynEtK5j2WDHwPGje5bo62OlXcsqxD0Q8s0KE0UM4dyLXCTlVmTvjIl/r3fIlxrUGGpZWpV/PwvDdtFsRYnszj/uhlZ9OIoytCHFYtrms/8sKj8YupcDTx66sUoBO9IhHuXmkk0FotzGgVaCT+WK/3Pqfdx7WnfVNz7FKC418huBH4ifnq9Erah7BWiQcU6xpDvwSwsEWSbCVRPO/RNaC8IPM2/rVraubvXHhU4P+DUOvCKoHA2g8ZmJirIATsvPbZ7iknsOg3olYAKR5zyI6Iwu2bDHCH4=
       if: branch = master AND type = push
       node_js: 12
       script:
@@ -105,7 +105,7 @@ jobs:
     - stage: Deploy
       env:
         # GITHUB_TOKEN
-        # - secure: CHANGEME
+        - secure: OjSOXUWhRPUy2lQ8BcnrVpO6fzqisFh2LzSln0fOSo8pDFmKhkNsLvPufHg4SuZg+ynpV19ZXPFGAiiBAS0C0i+NUxUcunmRI+gmdobbdnMf40yw7PanqBzL33IlicsE8U/0mqC+ha7lF5zQcNLTZXzMDarKQVklqbW/GrgLy6kFmohf9dDDGxHeKtIF5qk3djiFfatNf2Q+eyNI8/nxlCFqqy0fhFQJUL2kqJTYXn8CwhIMQP3Qn3SqGTJhrjFbn0VwmKdKn/QIcaEec9m6he9gzWWIXXsB3YkPO63hm0FThqnf23Z72xfF03BrAqIkRpN5SrcpqcNgZ1KVd2lEnXG6uBYCGpK2kG/qNEYuKI7edv+Ns6G7i/DuStL7l82jvnedyjYgFYjXMynEtK5j2WDHwPGje5bo62OlXcsqxD0Q8s0KE0UM4dyLXCTlVmTvjIl/r3fIlxrUGGpZWpV/PwvDdtFsRYnszj/uhlZ9OIoytCHFYtrms/8sKj8YupcDTx66sUoBO9IhHuXmkk0FotzGgVaCT+WK/3Pqfdx7WnfVNz7FKC418huBH4ifnq9Erah7BWiQcU6xpDvwSwsEWSbCVRPO/RNaC8IPM2/rVraubvXHhU4P+DUOvCKoHA2g8ZmJirIATsvPbZ7iknsOg3olYAKR5zyI6Iwu2bDHCH4=
       node_js: 12
       script: skip
       deploy:
