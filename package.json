@@ -11,15 +11,29 @@
     "tencent"
   ],
   "author": "Serverless, Inc.",
+  "main": "serverless.js",
+  "dependencies": {
+    "@serverless/core": "^1.1.2",
+    "@serverless/tencent-apigateway": "^1.9.10",
+    "@serverless/tencent-scf": "^1.2.3",
+    "aws-serverless-express": "^3.3.6",
+    "ext": "^1.4.0",
+    "fs-extra": "^8.1.0",
+    "terser": "^4.4.1",
+    "type": "^2.0.0",
+    "webmake": "^1.1.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@serverless/eslint-config": "^1.2.1",
     "eslint": "^6.7.1",
     "eslint-plugin-import": "^2.18.2",
+    "essentials": "^1.1.1",
     "git-list-updated": "^1.2.1",
     "github-release-from-cc-changelog": "^2.2.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
+    "minimist": "^1.2.0",
     "prettier": "^1.19.1",
     "standard-version": "^7.0.1"
   },
@@ -28,7 +42,17 @@
     "root": true,
     "parserOptions": {
       "ecmaVersion": 2017
-    }
+    },
+    "overrides": [
+      {
+        "files": [
+          "lib/resolve-cached-handler-path/generate.js"
+        ],
+        "rules": {
+          "no-unused-expressions": "off"
+        }
+      }
+    ]
   },
   "husky": {
     "hooks": {
