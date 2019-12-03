@@ -19,14 +19,14 @@
     "aws-serverless-express": "^3.3.6",
     "ext": "^1.4.0",
     "fs-extra": "^8.1.0",
-    "terser": "^4.4.1",
+    "terser": "^4.4.2",
     "type": "^2.0.0",
     "webmake": "^1.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@serverless/eslint-config": "^1.2.1",
-    "eslint": "^6.7.1",
+    "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.18.2",
     "essentials": "^1.1.1",
     "git-list-updated": "^1.2.1",
