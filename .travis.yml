@@ -109,6 +109,7 @@ jobs:
       node_js: 12
       script: skip
       deploy:
+        edge: true # Workaorund Travis regression: https://travis-ci.community/t/missing-api-key-when-deploying-to-github-releases/5761
         provider: npm
         email: services@serverless.com
         on:
