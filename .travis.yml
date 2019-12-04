@@ -98,7 +98,7 @@ jobs:
           if [ -n "$tagName" ];
           then
             git tag v$tagName
-            git push -q https://$GITHUB_TOKEN@github.com/serverless/tencent-koa --tags
+            git push -q https://$GITHUB_TOKEN@github.com/serverless-components/tencent-koa --tags
           fi
 
     # version tag
