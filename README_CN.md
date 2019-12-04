@@ -1,56 +1,45 @@
-# @serverless/tencent-koa
+# 腾讯云 koa 组件
 
-Easily deploy [koa](https://koajs.com/) applications to Tencent Cloud's serverless infrastructure using this Serverless Framework Component. Your application will auto-scale, never charge you for idle time, and require little-to-zero administration.
+## 简介
 
-&nbsp;
+koa 组件通过使用 serverless-tencent 的基础组件如API网关组件，SCF组件等，快速，方便的在腾讯云创建，配置和管理一个 [koa框架](https://koajs.com/)。
 
-* [请点击这里查看中文版部署文档](./README_CN.md)
+## 快速开始
 
-1. [Install](#1-install)
-2. [Create](#2-create)
-3. [Configure](#3-configure)
-4. [Deploy](#4-deploy)
-5. [Remove](#5-remove)
+通过 koa 组件，对一个 koa 应用进行完整的创建，配置，部署和删除等操作。支持命令如下：
 
-&nbsp;
+1. [安装](#1-安装)
+2. [创建](#2-创建)
+3. [配置](#3-配置)
+4. [部署](#4-部署)
+5. [移除](#5-移除)
 
-&nbsp;
+### 1. 安装
 
-### 1. Install
+通过 npm 安装 serverless 
 
 ```console
 $ npm install -g serverless
 ```
 
-### 2. Create
+### 2. 创建
 
-Just create `serverless.yml` and `.env` files
+本地创建 `serverless.yml` 文件和 `app.js`文件：
 
 ```console
-$ touch .env # your Tencent API Keys
-$ touch app.js
 $ touch serverless.yml
 ```
 
-Add the access keys of a [Tencent CAM Role](https://console.cloud.tencent.com/cam/capi) with `AdministratorAccess` in the `.env` file, using this format:
-
+初始化一个新的 npm 包，并安装 koa:
 ```
-# .env
-TENCENT_SECRET_ID=123
-TENCENT_SECRET_KEY=123
+npm init              # 创建后持续回车
+npm i --save koa  # 安装 koa
 ```
 
-- If you don't have a Tencent Cloud account, you could [sign up](https://intl.cloud.tencent.com/register) first.
-
-Initialize a new NPM package and install koa:
-
+创建一个 `app.js`文件，并在其中创建您的 koa App：
+```console
+$ touch app.js
 ```
-npm init          # then keep hitting enter
-npm i --save koa  # install koa
-```
-
-create your koa app in `app.js`:
-
 ```js
 const koa = require('koa');
 const app = koa();
@@ -64,7 +53,9 @@ app.use(async (ctx, next) => {
 module.exports = app;
 ```
 
-### 3. Configure
+### 3. 配置
+
+在 serverless.yml 中进行如下配置
 
 ```yml
 # serverless.yml
@@ -73,11 +64,16 @@ koa:
   component: '@serverless/tencent-koa'
   inputs:
     region: ap-shanghai
+
 ```
 
-- [Click here to view the configuration document](https://github.com/serverless-tencent/tencent-koa/blob/master/docs/configure.md)
+### 4. 部署
 
-### 4. Deploy
+如您的账号未[登陆](https://cloud.tencent.com/login)或[注册](https://cloud.tencent.com/register)腾讯云，您可以直接通过`微信`扫描命令行中的二维码进行授权登陆和注册。
+
+通过`sls`命令进行部署，并可以添加`--debug`参数查看部署过程中的信息
+
+> 注：`sls`命令是`serverless`命令的缩写
 
 ```
 $ sls --debug
@@ -111,11 +107,13 @@ $ sls --debug
     url:                 http://service-n0vs2ohb-1300415943.ap-shanghai.apigateway.myqcloud.com/release/
 
   36s › koa › done
+
 ```
+部署完毕后，可以在浏览器中访问返回的链接，看到对应的 koa返回值。
 
-You can now visit the output URL in the browser, and you should see the koa response.
+### 5. 移除
 
-### 5. Remove
+通过以下命令移除部署的存储桶
 
 ```
 $ sls remove --debug
@@ -123,11 +121,31 @@ $ sls remove --debug
   DEBUG ─ Flushing template state and removing all components.
   DEBUG ─ Removed function KoaComponent_MHrAzr successful
   DEBUG ─ Removing any previously deployed API. api-kf2hxrhc
-  DEBUG ─ Removing any previously deployed service. service-4ndfl6pz
+  DEBUG ─ Removing any previously deployed service.  service-n0vs2ohb
 
   13s › koa › done
 ```
 
-### New to Components?
+### 账号配置（可选）
 
-Checkout the [Serverless Components](https://github.com/serverless/components) repo for more information.
+当前默认支持CLI扫描二维码登录，如您希望配置持久的环境变量/秘钥信息，也可以本地创建 `.env` 文件
+
+```console
+$ touch .env # 腾讯云的配置信息
+```
+
+在 `.env` 文件中配置腾讯云的SecretId和SecretKey信息并保存
+
+如果没有腾讯云账号，可以在此[注册新账号](https://cloud.tencent.com/register)。
+
+如果已有腾讯云账号，可以在[API密钥管理](https://console.cloud.tencent.com/cam/capi)中获取 `SecretId` 和`SecretKey`.
+
+```
+# .env
+TENCENT_SECRET_ID=123
+TENCENT_SECRET_KEY=123
+```
+
+### 还支持哪些组件？
+
+可以在 [Serverless Components](https://github.com/serverless/components) repo 中查询更多组件的信息。
