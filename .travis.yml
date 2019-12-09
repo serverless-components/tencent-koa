@@ -98,7 +98,7 @@ jobs:
           if [ -n "$tagName" ];
           then
             git tag v$tagName
-            git push -q https://$GITHUB_TOKEN@github.com/serverless/tencent-koa --tags
+            git push -q https://$GITHUB_TOKEN@github.com/serverless-components/tencent-koa --tags
           fi
 
     # version tag
@@ -109,6 +109,7 @@ jobs:
       node_js: 12
       script: skip
       deploy:
+        edge: true # Workaorund Travis regression: https://travis-ci.community/t/missing-api-key-when-deploying-to-github-releases/5761
         provider: npm
         email: services@serverless.com
         on:
