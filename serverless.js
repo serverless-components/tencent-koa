@@ -9,6 +9,13 @@ const { Component, utils } = require('@serverless/core');
 const resolveCachedHandlerPath = require('./lib/resolve-cached-handler-path');
 
 module.exports = class TencentKoa extends Component {
+  getDefaultProtocol(protocols) {
+    if (protocols.map(i => i.toLowerCase()).includes('https')) {
+      return 'https';
+    }
+    return 'http';
+  }
+
   async default(inputs = {}) {
     inputs.name =
       ensureString(inputs.functionName, { isOptional: true }) ||
@@ -47,7 +54,7 @@ module.exports = class TencentKoa extends Component {
       description: 'Serverless Framework tencent-koa Component',
       serviceId: inputs.serviceId,
       region: inputs.region,
-      protocol: apigatewayConf.protocol || 'http',
+      protocols: apigatewayConf.protocols || ['http'],
       environment: apigatewayConf.environment || 'release',
       endpoints: [
         {
@@ -66,11 +73,14 @@ module.exports = class TencentKoa extends Component {
     this.state.functionName = inputs.name;
     await this.save();
     const tencentApiGatewayOutputs = await tencentApiGateway(apigwParam);
+
     return {
       region: inputs.region,
       functionName: inputs.name,
       apiGatewayServiceId: tencentApiGatewayOutputs.serviceId,
-      url: `${tencentApiGatewayOutputs.protocol}://${tencentApiGatewayOutputs.subDomain}/${tencentApiGatewayOutputs.environment}/`,
+      url: `${this.getDefaultProtocol(tencentApiGatewayOutputs.protocols)}://${
+        tencentApiGatewayOutputs.subDomain
+      }/${tencentApiGatewayOutputs.environment}/`,
     };
   }
 
