@@ -1,3 +1,5 @@
+[![Serverless Koa Tencent Cloud](https://img.serverlesscloud.cn/20191226/1577361724216-koajs_width.png)](http://serverless.com)
+
 # @serverless/tencent-koa
 
 Easily deploy [koa](https://koajs.com/) applications to Tencent Cloud's serverless infrastructure using this Serverless Framework Component. Your application will auto-scale, never charge you for idle time, and require little-to-zero administration.

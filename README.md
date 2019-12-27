@@ -1,3 +1,5 @@
+[![Serverless Koa Tencent Cloud](https://img.serverlesscloud.cn/20191226/1577361724216-koajs_width.png)](http://serverless.com)
+
 # 腾讯云 koa 组件
 
 ## 简介
