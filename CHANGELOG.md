@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/serverless-components/tencent-koa/compare/v2.0.0...v2.0.1) (2020-01-06)
+
+### Bug Fixes
+
+- @serverless/tencent-scf version ([704bbcc](https://github.com/serverless-components/tencent-koa/commit/704bbcce083b467cabf3f97be6bb24553f7da933))
+
 ## [2.0.0](https://github.com/serverless-components/tencent-koa/compare/v1.0.0...v2.0.0) (2019-12-12)
 
 ### ⚠ BREAKING CHANGES
