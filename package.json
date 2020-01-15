@@ -19,6 +19,7 @@
     "ext": "^1.4.0",
     "fs-extra": "^8.1.0",
     "prettier": "^1.19.1",
+    "tencent-serverless-nodejs": "^1.0.0",
     "terser": "^4.4.2",
     "type": "^2.0.0",
     "type-is": "^1.6.18",

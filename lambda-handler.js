@@ -2,7 +2,7 @@
 
 'use strict';
 
-const { createServer, proxy } = require('./aws-serverless-express');
+const { createServer, proxy } = require('tencent-serverless-nodejs');
 
 const server = createServer(require.fromParentEnvironment('./app').callback());
 
