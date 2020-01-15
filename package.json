@@ -22,7 +22,6 @@
     "tencent-serverless-nodejs": "^1.0.0",
     "terser": "^4.4.2",
     "type": "^2.0.0",
-    "type-is": "^1.6.18",
     "webmake": "^1.1.0"
   },
   "devDependencies": {
