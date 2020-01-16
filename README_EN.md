@@ -77,7 +77,7 @@ koa:
     region: ap-shanghai
 ```
 
-- [Click here to view the configuration document](https://github.com/serverless-tencent/tencent-koa/blob/master/docs/configure.md)
+- [Click here to view the configuration document](https://github.com/serverless-components/tencent-koa/blob/master/docs/configure.md)
 
 ### 4. Deploy
 
