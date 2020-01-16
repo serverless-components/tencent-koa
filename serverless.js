@@ -39,7 +39,6 @@ module.exports = class TencentKoa extends Component {
     inputs.runtime = 'Nodejs8.9';
 
     const tencentCloudFunction = await this.load('@serverless/tencent-scf');
-    const tencentApiGateway = await this.load('@serverless/tencent-apigateway');
 
     if (inputs.functionConf) {
       inputs.timeout = inputs.functionConf.timeout || 3;
@@ -49,39 +48,48 @@ module.exports = class TencentKoa extends Component {
     }
 
     const tencentCloudFunctionOutputs = await tencentCloudFunction(inputs);
-    const apigwParam = {
-      serviceName: inputs.serviceName,
-      description: 'Serverless Framework tencent-koa Component',
-      serviceId: inputs.serviceId,
-      region: inputs.region,
-      protocols: apigatewayConf.protocols || ['http'],
-      environment: apigatewayConf.environment || 'release',
-      endpoints: [
-        {
-          path: '/',
-          method: 'ANY',
-          function: {
-            isIntegratedResponse: true,
-            functionName: tencentCloudFunctionOutputs.Name,
-          },
-        },
-      ],
-    };
-    if (apigatewayConf.usagePlan) apigwParam.endpoints[0].usagePlan = apigatewayConf.usagePlan;
-    if (apigatewayConf.auth) apigwParam.endpoints[0].auth = inputs.apigatewayConf.auth;
 
-    this.state.functionName = inputs.name;
-    await this.save();
-    const tencentApiGatewayOutputs = await tencentApiGateway(apigwParam);
-
-    return {
+    const output = {
       region: inputs.region,
       functionName: inputs.name,
-      apiGatewayServiceId: tencentApiGatewayOutputs.serviceId,
-      url: `${this.getDefaultProtocol(tencentApiGatewayOutputs.protocols)}://${
-        tencentApiGatewayOutputs.subDomain
-      }/${tencentApiGatewayOutputs.environment}/`,
     };
+
+    // if not disable, then create apigateway
+    if (apigatewayConf.disable !== true) {
+      const tencentApiGateway = await this.load('@serverless/tencent-apigateway');
+
+      const apigwParam = {
+        serviceName: inputs.serviceName,
+        description: 'Serverless Framework tencent-koa Component',
+        serviceId: inputs.serviceId,
+        region: inputs.region,
+        protocols: apigatewayConf.protocols || ['http'],
+        environment: apigatewayConf.environment || 'release',
+        endpoints: [
+          {
+            path: '/',
+            method: 'ANY',
+            function: {
+              isIntegratedResponse: true,
+              functionName: tencentCloudFunctionOutputs.Name,
+            },
+          },
+        ],
+      };
+      if (apigatewayConf.usagePlan) apigwParam.endpoints[0].usagePlan = apigatewayConf.usagePlan;
+      if (apigatewayConf.auth) apigwParam.endpoints[0].auth = inputs.apigatewayConf.auth;
+
+      this.state.functionName = inputs.name;
+      await this.save();
+      const tencentApiGatewayOutputs = await tencentApiGateway(apigwParam);
+
+      output.apiGatewayServiceId = tencentApiGatewayOutputs.serviceId;
+      output.url = `${this.getDefaultProtocol(tencentApiGatewayOutputs.protocols)}://${
+        tencentApiGatewayOutputs.subDomain
+      }/${tencentApiGatewayOutputs.environment}/`;
+    }
+
+    return output;
   }
 
   async remove() {
