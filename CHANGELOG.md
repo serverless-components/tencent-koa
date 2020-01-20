@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/serverless-components/tencent-koa/compare/v2.0.2...v2.1.0) (2020-01-20)
+
+### Features
+
+- add disable apigateway auto create ([354ebb4](https://github.com/serverless-components/tencent-koa/commit/354ebb49db6c01e1196d09f55239bd129759be4c))
+
 ### [2.0.2](https://github.com/serverless-components/tencent-koa/compare/v2.0.1...v2.0.2) (2020-01-16)
 
 ### Bug Fixes
