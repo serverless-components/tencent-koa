@@ -55,7 +55,7 @@ module.exports = class TencentKoa extends Component {
     };
 
     // if not disable, then create apigateway
-    if (apigatewayConf.disable !== true) {
+    if (!apigatewayConf.isDisabled) {
       const tencentApiGateway = await this.load('@serverless/tencent-apigateway');
 
       const apigwParam = {
