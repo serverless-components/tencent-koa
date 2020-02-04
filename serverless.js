@@ -47,6 +47,7 @@ module.exports = class TencentKoa extends Component {
       if (inputs.functionConf.vpcConfig) inputs.vpcConfig = inputs.functionConf.vpcConfig;
     }
 
+    inputs.fromClientRemark = inputs.fromClientRemark || 'tencent-koa';
     const tencentCloudFunctionOutputs = await tencentCloudFunction(inputs);
 
     const output = {
@@ -81,6 +82,7 @@ module.exports = class TencentKoa extends Component {
 
       this.state.functionName = inputs.name;
       await this.save();
+      apigwParam.fromClientRemark = inputs.fromClientRemark || 'tencent-koa';
       const tencentApiGatewayOutputs = await tencentApiGateway(apigwParam);
 
       output.apiGatewayServiceId = tencentApiGatewayOutputs.serviceId;
@@ -92,12 +94,15 @@ module.exports = class TencentKoa extends Component {
     return output;
   }
 
-  async remove() {
+  async remove(inputs = {}) {
+    const removeInput = {
+      fromClientRemark: inputs.fromClientRemark || 'tencent-koa',
+    };
     const tencentApiGateway = await this.load('@serverless/tencent-apigateway');
     const tencentCloudFunction = await this.load('@serverless/tencent-scf');
 
-    await tencentApiGateway.remove();
-    await tencentCloudFunction.remove();
+    await tencentApiGateway.remove(removeInput);
+    await tencentCloudFunction.remove(removeInput);
 
     return {};
   }
