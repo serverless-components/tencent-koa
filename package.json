@@ -1,6 +1,6 @@
 {
   "name": "@serverless/tencent-koa",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Tencent Koa Component",
   "repository": "serverless-components/tencent-koa",
   "keywords": [
