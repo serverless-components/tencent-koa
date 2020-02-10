@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://github.com/serverless-components/tencent-koa/compare/v2.1.0...v2.1.1) (2020-02-04)
+
+### Bug Fixes
+
+- Fix auth ([5bf1fd4](https://github.com/serverless-components/tencent-koa/commit/5bf1fd4134aa90c1d7706555bce8897481c6e987))
+
 ## [2.1.0](https://github.com/serverless-components/tencent-koa/compare/v2.0.2...v2.1.0) (2020-01-20)
 
 ### Features
