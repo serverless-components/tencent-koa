@@ -81,8 +81,6 @@ module.exports = class TencentKoa extends Component {
       if (apigatewayConf.usagePlan) apigwParam.endpoints[0].usagePlan = apigatewayConf.usagePlan;
       if (apigatewayConf.auth) apigwParam.endpoints[0].auth = inputs.apigatewayConf.auth;
 
-      this.state.functionName = inputs.name;
-      await this.save();
       apigwParam.fromClientRemark = inputs.fromClientRemark || 'tencent-koa';
       const tencentApiGatewayOutputs = await tencentApiGateway(apigwParam);
 
@@ -95,6 +93,8 @@ module.exports = class TencentKoa extends Component {
         output.customDomains = tencentApiGatewayOutputs.customDomains;
       }
     }
+    this.state.functionName = inputs.name;
+    await this.save();
 
     return output;
   }
