@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/serverless-components/tencent-koa/compare/v2.1.1...v2.2.0) (2020-02-18)
+
+### Features
+
+- Update dependency apigw for supporting custom domain ([893f1e2](https://github.com/serverless-components/tencent-koa/commit/893f1e278d31362799b520dffb59656a449dd412))
+
+### Bug Fixes
+
+- tencent-serverless-http version to 1.0.5 ([6382b8f](https://github.com/serverless-components/tencent-koa/commit/6382b8f0030f6ee4cca8f8baec25ac0d64087c6b))
+
 ### [2.1.1](https://github.com/serverless-components/tencent-koa/compare/v2.1.0...v2.1.1) (2020-02-04)
 
 ### Bug Fixes
