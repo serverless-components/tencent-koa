@@ -76,6 +76,7 @@ module.exports = class TencentKoa extends Component {
             },
           },
         ],
+        customDomain: apigatewayConf.customDomain,
       };
       if (apigatewayConf.usagePlan) apigwParam.endpoints[0].usagePlan = apigatewayConf.usagePlan;
       if (apigatewayConf.auth) apigwParam.endpoints[0].auth = inputs.apigatewayConf.auth;
@@ -89,6 +90,10 @@ module.exports = class TencentKoa extends Component {
       output.url = `${this.getDefaultProtocol(tencentApiGatewayOutputs.protocols)}://${
         tencentApiGatewayOutputs.subDomain
       }/${tencentApiGatewayOutputs.environment}/`;
+
+      if (tencentApiGatewayOutputs.customDomains) {
+        output.customDomains = tencentApiGatewayOutputs.customDomains;
+      }
     }
 
     return output;
