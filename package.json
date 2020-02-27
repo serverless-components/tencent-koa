@@ -15,7 +15,7 @@
   "dependencies": {
     "@serverless/core": "^1.1.2",
     "@serverless/tencent-apigateway": "^2.1.2",
-    "@serverless/tencent-scf": "^2.0.12",
+    "@serverless/tencent-scf": "^2.1.0",
     "ext": "^1.4.0",
     "fs-extra": "^8.1.0",
     "prettier": "^1.19.1",
