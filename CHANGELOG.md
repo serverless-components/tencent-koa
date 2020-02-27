@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.1](https://github.com/serverless-components/tencent-koa/compare/v2.2.0...v2.2.1) (2020-02-27)
+
+### Bug Fixes
+
+- Upgrade tencent-scf supporting upload bar ([#23](https://github.com/serverless-components/tencent-koa/issues/23)) ([46d508f](https://github.com/serverless-components/tencent-koa/commit/46d508f962c6247e3c2ae50c24f4a0bc9bf6b4cc))
+
 ## [2.2.0](https://github.com/serverless-components/tencent-koa/compare/v2.1.1...v2.2.0) (2020-02-18)
 
 ### Features
