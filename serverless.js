@@ -23,6 +23,7 @@ module.exports = class TencentKoa extends Component {
       `KoaComponent_${random({ length: 6 })}`;
     inputs.codeUri = ensureString(inputs.code, { isOptional: true }) || process.cwd();
     inputs.region = ensureString(inputs.region, { default: 'ap-guangzhou' });
+    inputs.namespace = ensureString(inputs.namespace, { default: 'default' });
     inputs.include = ensureIterable(inputs.include, { default: [], ensureItem: ensureString });
     inputs.exclude = ensureIterable(inputs.exclude, { default: [], ensureItem: ensureString });
     const apigatewayConf = ensurePlainObject(inputs.apigatewayConf, { default: {} });
@@ -73,6 +74,7 @@ module.exports = class TencentKoa extends Component {
             function: {
               isIntegratedResponse: true,
               functionName: tencentCloudFunctionOutputs.Name,
+              functionNamespace: inputs.namespace,
             },
           },
         ],
