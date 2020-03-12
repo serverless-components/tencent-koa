@@ -1,5 +1,12 @@
-/.eslintcache
-/node_modules
+.eslintcache
+node_modules
 npm-debug.log
-/package-lock.json
+
+yarn.lock
+package-lock.json
+
 tmp/
+
+.env*
+env.js
+.serverless

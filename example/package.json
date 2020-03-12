@@ -1,0 +1,14 @@
+{
+  "name": "tencent-koa-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yugasun",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.11.0"
+  }
+}
