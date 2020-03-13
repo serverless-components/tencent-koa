@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.2](https://github.com/serverless-components/tencent-koa/compare/v2.2.1...v2.2.2) (2020-03-13)
+
+### Bug Fixes
+
+- Add example code ([f16b063](https://github.com/serverless-components/tencent-koa/commit/f16b0635031b7ac6b0e960968387959ca7bc84ef))
+- Apigw namespace ([c18d776](https://github.com/serverless-components/tencent-koa/commit/c18d77640ce85c6beb61c0b443530b8613c180c0))
+
 ### [2.2.1](https://github.com/serverless-components/tencent-koa/compare/v2.2.0...v2.2.1) (2020-02-27)
 
 ### Bug Fixes
