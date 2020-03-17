@@ -1,2 +1,4 @@
-aws-serverless-express.js
+coverage
+dist
+node_modules
 example

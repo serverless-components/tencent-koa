@@ -2,7 +2,7 @@ koa:
   component: '@serverless/tencent-koa'
   inputs:
     region: ap-guangzhou
-    functionName: egg-function
+    functionName: koa-function
     code: ./
     functionConf:
       timeout: 10

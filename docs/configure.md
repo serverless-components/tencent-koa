@@ -6,10 +6,10 @@
 # serverless.yml
 
 koa:
-  region: ap-shanghai
+  region: ap-guangzhou
   component: '@serverless/tencent-koa'
   inputs:
-    region: ap-shanghai
+    region: ap-guangzhou
     functionName: my-function
     serviceName: mytest
     serviceId: service-np1uloxw
