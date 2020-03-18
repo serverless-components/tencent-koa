@@ -16,7 +16,7 @@ const framework = 'koa'
 class TencentComponent extends Component {
   async default(inputs = {}) {
     inputs.include = ensureIterable(inputs.include, { default: [], ensureItem: ensureString })
-    inputs.runtime = DEFAULTS.runtime
+    inputs.runtime = ensureString(inputs.runtime, { default: DEFAULTS.runtime })
 
     const cachePath = path.join(
       os.homedir(),
