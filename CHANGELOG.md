@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.3](https://github.com/serverless-components/tencent-koa/compare/v3.0.1...v3.0.3) (2020-03-26)
+
+### Bug Fixes
+
+- make runtime default node10.15 ([4fa85f9](https://github.com/serverless-components/tencent-koa/commit/4fa85f9b9c81a5868cdb35944c274df82210d063))
+- upgrade framework ([c3a1b2a](https://github.com/serverless-components/tencent-koa/commit/c3a1b2a06ac8f2f0690eaddcb5abab476227f9cc))
+
 ### [3.0.2](https://github.com/serverless-components/tencent-koa/compare/v3.0.1...v3.0.2) (2020-03-26)
 
 ### Bug Fixes
