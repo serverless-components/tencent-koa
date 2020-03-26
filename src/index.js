@@ -8,10 +8,9 @@ const { bundler } = require('@ygkit/bundler')
 const pkg = require('../package.json')
 
 const DEFAULTS = {
-  runtime: 'Nodejs10.15'
+  runtime: 'Nodejs10.15',
+  framework: 'koa'
 }
-
-const framework = 'koa'
 
 class TencentComponent extends Component {
   async default(inputs = {}) {
@@ -20,7 +19,7 @@ class TencentComponent extends Component {
 
     const cachePath = path.join(
       os.homedir(),
-      `.serverless/cache/tencent-${framework}`,
+      `.serverless/cache/tencent-${DEFAULTS.framework}`,
       pkg.version,
       'serverless-handler.js'
     )
@@ -42,7 +41,7 @@ class TencentComponent extends Component {
     const framworkOutpus = await Framework({
       ...inputs,
       ...{
-        framework
+        framework: DEFAULTS.framework
       }
     })
 

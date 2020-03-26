@@ -63,6 +63,9 @@ app.use(async (ctx, next) => {
   ctx.body = 'Hello from Koa'
 })
 
+// set binary types
+// app.binaryTypes = [*/*];
+
 // don't forget to export!
 module.exports = app
 ```
