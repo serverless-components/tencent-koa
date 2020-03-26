@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.4](https://github.com/serverless-components/tencent-koa/compare/v3.0.3...v3.0.4) (2020-03-26)
+
+### Features
+
+- support binary types config ([90ce48a](https://github.com/serverless-components/tencent-koa/commit/90ce48a627e938831ec9d411883ac0da7c33af1b))
+
 ### [3.0.3](https://github.com/serverless-components/tencent-koa/compare/v3.0.1...v3.0.3) (2020-03-26)
 
 ### Bug Fixes
