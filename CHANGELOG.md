@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.5](https://github.com/serverless-components/tencent-koa/compare/v3.0.4...v3.0.5) (2020-03-27)
+
+### Bug Fixes
+
+- make default runtime to Nodejs8.9 ([cd8290e](https://github.com/serverless-components/tencent-koa/commit/cd8290e9a0b23cda55c8d823a4e206b760a41648))
+
 ### [3.0.4](https://github.com/serverless-components/tencent-koa/compare/v3.0.3...v3.0.4) (2020-03-26)
 
 ### Features
