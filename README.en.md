@@ -80,6 +80,7 @@ koa:
   inputs:
     region: ap-guangzhou
     functionName: koa-function
+    runtime: Nodejs8.9
     code: ./
     functionConf:
       timeout: 10
