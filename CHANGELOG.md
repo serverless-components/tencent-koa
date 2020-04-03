@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.6](https://github.com/serverless-components/tencent-koa/compare/v3.0.5...v3.0.6) (2020-04-03)
+
+### Bug Fixes
+
+- update dependencies ([df3fbe9](https://github.com/serverless-components/tencent-koa/commit/df3fbe902b2cd0c735b66d572e7266aac71d9656))
+
 ### [3.0.5](https://github.com/serverless-components/tencent-koa/compare/v3.0.4...v3.0.5) (2020-03-27)
 
 ### Bug Fixes
