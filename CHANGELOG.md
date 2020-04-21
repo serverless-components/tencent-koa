@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.7](https://github.com/serverless-components/tencent-koa/compare/v3.0.6...v3.0.7) (2020-04-21)
+
+### Features
+
+- make callbackWaitsForEmptyEventLoop default to false ([6d009f8](https://github.com/serverless-components/tencent-koa/commit/6d009f820b49d3d8aeb6bc8765c56e5769db910e))
+
 ### [3.0.6](https://github.com/serverless-components/tencent-koa/compare/v3.0.5...v3.0.6) (2020-04-03)
 
 ### Bug Fixes
