@@ -1,5 +1,5 @@
 coverage
 dist
 node_modules
-example
+CHANGELOG.md
 *.test.js
