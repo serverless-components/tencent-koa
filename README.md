@@ -2,10 +2,7 @@
 
 # 腾讯云 Koa 组件
 
-[![npm](https://img.shields.io/npm/v/%40serverless%2Ftencent-koa)](http://www.npmtrends.com/%40serverless%2Ftencent-koa)
-[![NPM downloads](http://img.shields.io/npm/dm/%40serverless%2Ftencent-koa.svg?style=flat-square)](http://www.npmtrends.com/%40serverless%2Ftencent-koa)
-
-简体中文 | [English](https://github.com/serverless-components/tencent-koa/blob/master/README.en.md)
+简体中文 | [English](https://github.com/serverless-components/tencent-koa/blob/v2/README.en.md)
 
 ## 简介
 
@@ -29,7 +26,7 @@ $ npm install -g serverless
 
 ### 2. 创建
 
-本地创建 `serverless.yml` 文件和 `app.js`文件：
+本地创建 `serverless.yml` 文件：
 
 ```console
 $ touch serverless.yml
@@ -42,10 +39,10 @@ npm init              # 创建后持续回车
 npm i --save koa  # 安装 koa
 ```
 
-创建一个 `app.js`文件，并在其中创建您的 koa App：
+创建一个 `sls.js`文件，并在其中创建您的 koa App：
 
 ```console
-$ touch app.js
+$ touch sls.js
 ```
 
 ```js
@@ -71,26 +68,27 @@ module.exports = app
 ```yml
 # serverless.yml
 
-koa:
-  component: '@serverless/tencent-koa'
-  inputs:
-    region: ap-guangzhou
-    functionName: koa-function
-    runtime: Nodejs8.9
-    code: ./
-    functionConf:
-      timeout: 10
-      memorySize: 128
-      environment:
-        variables:
-          TEST: vale
-    apigatewayConf:
-      protocols:
-        - https
-      environment: release
+org: orgDemo # (optional) serverless dashboard org. default is the first org you created during signup.
+app: appDemo # (optional) serverless dashboard app. default is the same as the name property.
+stage: dev # (optional) serverless dashboard stage. default is dev.
+component: koa # (required) name of the component. In that case, it's koa.
+name: koaDemo # (required) name of your koa component instance.
+
+inputs:
+  src:
+    src: ./src # (optional) path to the source folder. default is a hello world app.
+    exclude:
+      - .env
+  region: ap-guangzhou
+  runtime: Nodejs10.15
+  apigatewayConf:
+    protocols:
+      - http
+      - https
+    environment: release
 ```
 
-- [点击此处查看配置文档](https://github.com/serverless-components/tencent-koa/blob/master/docs/configure.md)
+- [点击此处查看配置文档](https://github.com/serverless-components/tencent-koa/blob/v2/docs/configure.md)
 
 ### 4. 部署
 
@@ -101,56 +99,7 @@ koa:
 > 注：`sls`命令是`serverless`命令的缩写
 
 ```
-$ sls --debug
-
-  DEBUG ─ Resolving the template's static variables.
-  DEBUG ─ Collecting components from the template.
-  DEBUG ─ Downloading any NPM components found in the template.
-  DEBUG ─ Analyzing the template's components dependencies.
-  DEBUG ─ Creating the template's components graph.
-  DEBUG ─ Syncing template state.
-  DEBUG ─ Executing the template's components graph.
-  DEBUG ─ Generating serverless handler...
-  DEBUG ─ Generated serverless handler successfully.
-  DEBUG ─ Compressing function koa-function file to /Users/yugasun/Desktop/Develop/serverless/tencent-koa/example/.serverless/koa-function.zip.
-  DEBUG ─ Compressed function koa-function file successful
-  DEBUG ─ Uploading service package to cos[sls-cloudfunction-ap-guangzhou-code]. sls-cloudfunction-default-koa-function-1584364164.zip
-  koa-function [████████████████████████████████████████] 100% | ETA: 0s | Speed: 923.87k/s
-  DEBUG ─ Uploaded package successful /Users/yugasun/Desktop/Develop/serverless/tencent-koa/example/.serverless/koa-function.zip
-  DEBUG ─ Creating function koa-function
-  DEBUG ─ Updating code...
-  DEBUG ─ Updating configure...
-  DEBUG ─ Created function koa-function successful
-  DEBUG ─ Setting tags for function koa-function
-  DEBUG ─ Creating trigger for function koa-function
-  DEBUG ─ Deployed function koa-function successful
-  DEBUG ─ Starting API-Gateway deployment with name ap-guangzhou-apigateway in the ap-guangzhou region
-  DEBUG ─ Using last time deploy service id service-pnlxadhq
-  DEBUG ─ Updating service with serviceId service-pnlxadhq.
-  DEBUG ─ Endpoint ANY / already exists with id api-9415bswy.
-  DEBUG ─ Updating api with api id api-9415bswy.
-  DEBUG ─ Service with id api-9415bswy updated.
-  DEBUG ─ Deploying service with id service-pnlxadhq.
-  DEBUG ─ Deployment successful for the api named ap-guangzhou-apigateway in the ap-guangzhou region.
-
-  koa:
-    functionName:        koa-function
-    functionOutputs:
-      ap-guangzhou:
-        Name:        koa-function
-        Runtime:     Nodejs8.9
-        Handler:     serverless-handler.handler
-        MemorySize:  128
-        Timeout:     10
-        Region:      ap-guangzhou
-        Namespace:   default
-        Description: This is a template function
-    region:              ap-guangzhou
-    apiGatewayServiceId: service-pnlxadhq
-    url:                 https://service-pnlxadhq-1251556596.gz.apigw.tencentcs.com/release/
-    cns:                 (empty array)
-
-  36s › koa › done
+$ sls deploy
 ```
 
 部署完毕后，可以在浏览器中访问部署成功地 url。
@@ -160,14 +109,7 @@ $ sls --debug
 通过以下命令移除部署的 Koa 服务。
 
 ```
-$ sls remove --debug
-
-  DEBUG ─ Flushing template state and removing all components.
-  DEBUG ─ Removed function koa-function successful
-  DEBUG ─ Removing any previously deployed API. api-9415bswy
-  DEBUG ─ Removing any previously deployed service. service-pnlxadhq
-
-  14s › koa › done
+$ sls remove
 ```
 
 ### 账号配置（可选）
