@@ -1,5 +1,10 @@
 const { createServer, proxy } = require('tencent-serverless-http')
-const app = require.fromParentEnvironment('./app')
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj }
+}
+
+const app = _interopRequireDefault(require.fromParentEnvironment('./app')).default
 
 module.exports.handler = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop =
