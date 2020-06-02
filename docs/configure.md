@@ -92,7 +92,7 @@ inputs:
 | 参数名称 | 是否必选 |      类型       | 默认值 | 描述                                                                                                                                                                                 |
 | -------- | :------: | :-------------: | :----: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | src      |    否    |     String      |        | 代码路径。与 object 不能同时存在。                                                                                                                                                   |
-| exclude  |    否    | Array of String |        | 不包含的文件或路径, 遵守 [glob 语法](https:# github.com/isaacs/node-glob)                                                                                                            |
+| exclude  |    否    | Array of String |        | 不包含的文件或路径, 遵守 [glob 语法](https://github.com/isaacs/node-glob)                                                                                                            |
 | bucket   |    否    |     String      |        | bucket 名称。如果配置了 src，表示部署 src 的代码并压缩成 zip 后上传到 bucket-appid 对应的存储桶中；如果配置了 object，表示获取 bucket-appid 对应存储桶中 object 对应的代码进行部署。 |
 | object   |    否    |     String      |        | 部署的代码在存储桶中的路径。                                                                                                                                                         |
 
@@ -105,7 +105,7 @@ inputs:
 
 ### DNS 配置
 
-参考: https:# cloud.tencent.com/document/product/302/8516
+参考: https://cloud.tencent.com/document/product/302/8516
 
 | 参数名称   | 是否必选 | 类型     | 默认值 | 描述                                            |
 | ---------- | :------: | -------- | :----: | :---------------------------------------------- |
@@ -122,7 +122,7 @@ inputs:
 
 ### 函数配置
 
-参考: https:# cloud.tencent.com/document/product/583/18586
+参考: https://cloud.tencent.com/document/product/583/18586
 
 | 参数名称    | 是否必选 |  类型  | 默认值 | 描述                                                                            |
 | ----------- | :------: | :----: | :----: | :------------------------------------------------------------------------------ |
@@ -157,7 +157,7 @@ inputs:
 
 - 使用计划
 
-参考: https:# cloud.tencent.com/document/product/628/14947
+参考: https://cloud.tencent.com/document/product/628/14947
 
 | 参数名称      | 是否必选 | 类型   | 描述                                                    |
 | ------------- | :------: | ------ | :------------------------------------------------------ |
@@ -168,7 +168,7 @@ inputs:
 
 - API 密钥配置
 
-参考: https:# cloud.tencent.com/document/product/628/14916
+参考: https://cloud.tencent.com/document/product/628/14916
 
 | 参数名称   | 类型   | 描述     |
 | ---------- | :----- | :------- |
@@ -177,7 +177,7 @@ inputs:
 
 ##### 自定义域名
 
-Refer to: https:# cloud.tencent.com/document/product/628/14906
+Refer to: https://cloud.tencent.com/document/product/628/14906
 
 | 参数名称         | 是否必选 |   类型   |  默认值  | 描述                                                                                                                                                                                 |
 | ---------------- | :------: | :------: | :------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
