@@ -6,7 +6,7 @@ name: koaDemo # (required) name of your koa component instance.
 
 inputs:
   src:
-    src: ./src # (optional) path to the source folder. default is a hello world app.
+    src: ./ # (optional) path to the source folder. default is a hello world app.
     exclude:
       - .env
   region: ap-guangzhou
