@@ -20,7 +20,7 @@
 
 通过 npm 安装 serverless
 
-```console
+```bash
 $ npm install -g serverless
 ```
 
@@ -28,20 +28,23 @@ $ npm install -g serverless
 
 本地创建 `serverless.yml` 文件：
 
-```console
+```bash
 $ touch serverless.yml
 ```
 
 初始化一个新的 npm 包，并安装 koa:
 
-```
-npm init              # 创建后持续回车
-npm i --save koa  # 安装 koa
+```bash
+# 创建后持续回车
+$ npm init
+
+# 安装 koa
+$ npm i --save koa
 ```
 
 创建一个 `sls.js`文件，并在其中创建您的 koa App：
 
-```console
+```bash
 $ touch sls.js
 ```
 
@@ -116,7 +119,7 @@ $ sls remove
 
 当前默认支持 CLI 扫描二维码登录，如您希望配置持久的环境变量/秘钥信息，也可以本地创建 `.env` 文件
 
-```console
+```bash
 $ touch .env # 腾讯云的配置信息
 ```
 
@@ -124,7 +127,7 @@ $ touch .env # 腾讯云的配置信息
 
 如果没有腾讯云账号，可以在此[注册新账号](https://cloud.tencent.com/register)。
 
-如果已有腾讯云账号，可以在[API 密钥管理](https://console.cloud.tencent.com/cam/capi)中获取 `SecretId` 和`SecretKey`.
+如果已有腾讯云账号，可以在[API 密钥管理](https://bash.cloud.tencent.com/cam/capi)中获取 `SecretId` 和`SecretKey`.
 
 ```
 # .env

@@ -18,7 +18,7 @@ Easily deploy [koa](https://koajs.com/) applications to Tencent Cloud's serverle
 
 ### 1. Install
 
-```console
+```bash
 $ npm install -g serverless
 ```
 
@@ -26,13 +26,13 @@ $ npm install -g serverless
 
 Just create `serverless.yml` and `.env` files
 
-```console
+```bash
 $ touch .env # your Tencent API Keys
 $ touch sls.js
 $ touch serverless.yml
 ```
 
-Add the access keys of a [Tencent CAM Role](https://console.cloud.tencent.com/cam/capi) with `AdministratorAccess` in the `.env` file, using this format:
+Add the access keys of a [Tencent CAM Role](https://bash.cloud.tencent.com/cam/capi) with `AdministratorAccess` in the `.env` file, using this format:
 
 ```
 # .env
@@ -44,9 +44,12 @@ TENCENT_SECRET_KEY=123
 
 Initialize a new NPM package and install koa:
 
-```
-npm init          # then keep hitting enter
-npm i --save koa  # install koa
+```bash
+# then keep hitting enter
+$ npm init
+
+# install koa
+$ npm i --save koa
 ```
 
 create your koa app in `sls.js`:
