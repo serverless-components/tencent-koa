@@ -154,6 +154,7 @@ inputs:
 | auth         |    否    |          |          | API 密钥配置, 参考 [API 密钥](#auth)                                               |
 | customDomain |    否    | Object[] |          | 自定义 API 域名配置, 参考 [自定义域名](#customDomain)                              |
 | isDisabled   |    否    | Boolean  | false    | 关闭自动创建 API 网关功能。默认值为否，即默认自动创建 API 网关。                   |
+| enableCORS   |    否    | Boolean  | false    | 开启跨域。默认值为否。                                                             |
 
 - 使用计划
 
