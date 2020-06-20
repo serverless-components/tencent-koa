@@ -37,8 +37,8 @@ inputs:
       variables: #  环境变量数组
         TEST: vale
     vpcConfig: # 私有网络配置
-      subnetId: '' # 私有网络的Id
-      vpcId: '' # 子网ID
+      vpcId: '' # 私有网络的Id
+      subnetId: '' # 子网ID
   apigatewayConf: #  api网关配置
     enableCORS: true #  允许跨域
     customDomains: # 自定义域名绑定
