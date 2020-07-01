@@ -28,11 +28,6 @@ const credentials = {
 // get serverless construct sdk
 const sdk = getServerlessSdk(instanceYaml.org)
 
-// clean up the instance after tests
-afterAll(async () => {
-  await sdk.remove(instanceYaml, credentials)
-})
-
 it('should successfully deploy koa app', async () => {
   const instance = await sdk.deploy(instanceYaml, { tencent: {} })
   expect(instance).toBeDefined()
