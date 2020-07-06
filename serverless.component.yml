@@ -4,7 +4,7 @@ author: Tencent Cloud, Inc.
 org: Tencent Cloud, Inc.
 description: Deploys a serverless Koa.js application onto Tencent SCF and Tencent APIGateway.
 keywords: tencent, serverless, koa
-repo: https://github.com/serverless-components/tencent-koa/tree/v2
-readme: https://github.com/serverless-components/tencent-koa/tree/v2/README.md
+repo: https://github.com/serverless-components/tencent-koa/
+readme: https://github.com/serverless-components/tencent-koa/tree/master/README.md
 license: MIT
 main: ./src
