@@ -8,3 +8,4 @@ repo: https://github.com/serverless-components/tencent-koa/
 readme: https://github.com/serverless-components/tencent-koa/tree/master/README.md
 license: MIT
 main: ./src
+webDeployable: true
