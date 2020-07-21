@@ -2,7 +2,7 @@ name: koa
 version: 0.0.6
 author: Tencent Cloud, Inc.
 org: Tencent Cloud, Inc.
-description: Deploy a serverless Koa.js application onto Tencent SCF and APIGateway.
+description: Deploy a serverless Koa.js application onto Tencent SCF and API Gateway.
 keywords: tencent, serverless, koa
 repo: https://github.com/serverless-components/tencent-koa/
 readme: https://github.com/serverless-components/tencent-koa/tree/master/README.md
