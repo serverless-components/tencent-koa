@@ -245,7 +245,9 @@ const prepareInputs = async (instance, credentials, inputs = {}) => {
     }),
     publish: inputs.publish,
     traffic: inputs.traffic,
-    lastVersion: instance.state.lastVersion
+    lastVersion: instance.state.lastVersion,
+    eip: tempFunctionConf.eip === true,
+    l5enable: tempFunctionConf.l5enable === true
   }
 
   // validate traffic
@@ -258,15 +260,6 @@ const prepareInputs = async (instance, credentials, inputs = {}) => {
     default: null
   })
 
-  functionConf.include = ensureIterable(
-    tempFunctionConf.include ? tempFunctionConf.include : inputs.include,
-    { default: [], ensureItem: ensureString }
-  )
-  functionConf.exclude = ensureIterable(
-    tempFunctionConf.exclude ? tempFunctionConf.exclude : inputs.exclude,
-    { default: [], ensureItem: ensureString }
-  )
-  functionConf.exclude.push('.git/**', '.gitignore', '.serverless', '.DS_Store')
   if (inputs.functionConf) {
     functionConf.timeout = inputs.functionConf.timeout
       ? inputs.functionConf.timeout
