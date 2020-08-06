@@ -247,7 +247,7 @@ const prepareInputs = async (instance, credentials, inputs = {}) => {
     traffic: inputs.traffic,
     lastVersion: instance.state.lastVersion,
     eip: tempFunctionConf.eip === true,
-    l5enable: tempFunctionConf.l5enable === true
+    l5Enable: tempFunctionConf.l5Enable === true
   }
 
   // validate traffic
