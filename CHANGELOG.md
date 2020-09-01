@@ -1,3 +1,10 @@
+## [0.0.10](https://github.com/serverless-components/tencent-koa/compare/v0.0.9...v0.0.10) (2020-09-01)
+
+
+### Bug Fixes
+
+* support cfs ([b7f7d9e](https://github.com/serverless-components/tencent-koa/commit/b7f7d9e7070ebe3dd3e0190eb66f56e6686aa7a7))
+
 ## [0.0.9](https://github.com/serverless-components/tencent-koa/compare/v0.0.8...v0.0.9) (2020-08-26)
 
 
