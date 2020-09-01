@@ -2,7 +2,7 @@
 
 # 腾讯云 Koa 组件
 
-简体中文 | [English](https://github.com/serverless-components/tencent-koa/blob/v2/README.en.md)
+简体中文 | [English](./README.en.md)
 
 ## 简介
 
@@ -91,7 +91,7 @@ inputs:
     environment: release
 ```
 
-- [点击此处查看配置文档](https://github.com/serverless-components/tencent-koa/blob/v2/docs/configure.md)
+- [点击此处查看配置文档](/docs/configure.md)
 
 ### 4. 部署
 

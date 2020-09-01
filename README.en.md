@@ -2,7 +2,7 @@
 
 # Tencent Koa Serverless Component
 
-[简体中文](https://github.com/serverless-components/tencent-koa/blob/v2/README.md) | English
+[简体中文](./README.md) | English
 
 ## Introduction
 
@@ -95,7 +95,7 @@ inputs:
     environment: release
 ```
 
-- [Click here to view the configuration document](https://github.com/serverless-components/tencent-koa/blob/v2/docs/configure.md)
+- [Click here to view the configuration document](/docs/configure.md)
 
 ### 4. Deploy
 
