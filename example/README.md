@@ -127,7 +127,7 @@ $ touch .env # 腾讯云的配置信息
 
 如果没有腾讯云账号，可以在此[注册新账号](https://cloud.tencent.com/register)。
 
-如果已有腾讯云账号，可以在[API 密钥管理](https://console.cloud.tencent.com/cam/capi)中获取 `SecretId` 和`SecretKey`.
+如果已有腾讯云账号，可以在[API 密钥管理](https://bash.cloud.tencent.com/cam/capi)中获取 `SecretId` 和`SecretKey`.
 
 ```
 # .env

@@ -2,7 +2,7 @@
 
 # Tencent Koa Serverless Component
 
-[简体中文](./README.md) | English
+[简体中文](https://github.com/serverless-components/tencent-koa/tree/master/README.md) | English
 
 ## Introduction
 
@@ -32,7 +32,7 @@ $ touch sls.js
 $ touch serverless.yml
 ```
 
-Add the access keys of a [Tencent CAM Role](https://bash.cloud.tencent.com/cam/capi) with `AdministratorAccess` in the `.env` file, using this format:
+Add the access keys of a [Tencent CAM Role](https://console.cloud.tencent.com/cam/capi) with `AdministratorAccess` in the `.env` file, using this format:
 
 ```
 # .env
@@ -95,7 +95,7 @@ inputs:
     environment: release
 ```
 
-- [Click here to view the configuration document](/docs/configure.md)
+- [Click here to view the configuration document](https://github.com/serverless-components/tencent-koa/tree/master/docs/configure.md)
 
 ### 4. Deploy
 

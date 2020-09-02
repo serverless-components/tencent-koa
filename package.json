@@ -1,6 +1,5 @@
 {
   "name": "@serverless/koa",
-  "version": "0.0.9",
   "main": "src/serverless.js",
   "publishConfig": {
     "access": "public"
