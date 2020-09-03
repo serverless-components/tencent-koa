@@ -1,3 +1,11 @@
+## [0.0.11](https://github.com/serverless-components/tencent-koa/compare/v0.0.10...v0.0.11) (2020-09-03)
+
+
+### Bug Fixes
+
+* update deps ([31dbc3e](https://github.com/serverless-components/tencent-koa/commit/31dbc3e321a14648de0ef0918f1a0a5af0905336))
+* update tencnet-component-toolkit for api mark ([9c79124](https://github.com/serverless-components/tencent-koa/commit/9c79124a18a9da3dea18157d69c952ed0f1cdacc))
+
 ## [0.0.10](https://github.com/serverless-components/tencent-koa/compare/v0.0.9...v0.0.10) (2020-09-01)
 
 
