@@ -1,3 +1,10 @@
+## [0.0.12](https://github.com/serverless-components/tencent-koa/compare/v0.0.11...v0.0.12) (2020-09-04)
+
+
+### Bug Fixes
+
+* update deps ([9854a88](https://github.com/serverless-components/tencent-koa/commit/9854a889676e3558538bd6b30defe05600a3c3ec))
+
 ## [0.0.11](https://github.com/serverless-components/tencent-koa/compare/v0.0.10...v0.0.11) (2020-09-03)
 
 
