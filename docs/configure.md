@@ -33,6 +33,9 @@ inputs:
   functionConf: # 函数配置相关
     timeout: 10 # 超时时间，单位秒
     eip: false # 是否固定出口IP
+    cls: # CLS 日志投递配置
+      logsetId: abcdef # 所属日志集ID
+      topicId: abcdef # 日志主题ID
     memorySize: 128 # 内存大小，单位MB
     environment: #  环境变量
       variables: #  环境变量数组
@@ -133,6 +136,7 @@ inputs:
 | environment |    否    | Object  |         | 函数的环境变量, 参考 [环境变量](#环境变量)                                      |
 | vpcConfig   |    否    | Object  |         | 函数的 VPC 配置, 参考 [VPC 配置](#VPC-配置)                                     |
 | eip         |    否    | Boolean | `false` | 是否固定出口 IP                                                                 |
+| cls         |    否    | Object  |         | CLS 日志投递配置，参考 [CLS 配置](#CLS-配置)                                    |
 
 ##### 环境变量
 
@@ -146,6 +150,13 @@ inputs:
 | -------- | ------ | :------ |
 | subnetId | String | 子网 ID |
 | vpcId    | String | VPC ID  |
+
+##### CLS 配置
+
+| 参数名称 | 类型   | 描述          |
+| -------- | ------ | :------------ |
+| logsetId | String | 所属日志集 ID |
+| topicId  | String | 日志主题 ID   |
 
 ### API 网关配置
 
