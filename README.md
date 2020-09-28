@@ -8,7 +8,7 @@
 
 使用腾讯云 Koa 组件，可快速的在腾讯云创建，配置和管理一个 [Koa 框架](https://koajs.com/) 服务。
 
-## 快速开始
+## [快速开始](https://github.com/serverless-components/tencent-examples/tree/all-templates/koa-demo)
 
 ```bash
 # 安装 serverless
