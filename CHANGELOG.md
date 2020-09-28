@@ -1,3 +1,10 @@
+# [0.1.0](https://github.com/serverless-components/tencent-koa/compare/v0.0.12...v0.1.0) (2020-09-28)
+
+
+### Features
+
+* support multi region and cls config ([3dd0c8f](https://github.com/serverless-components/tencent-koa/commit/3dd0c8fd4a0a074c858df1d151f9131ad5d14620))
+
 ## [0.0.12](https://github.com/serverless-components/tencent-koa/compare/v0.0.11...v0.0.12) (2020-09-04)
 
 
