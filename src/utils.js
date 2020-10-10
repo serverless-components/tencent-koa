@@ -239,10 +239,21 @@ const prepareInputs = async (instance, credentials, inputs = {}) => {
   functionConf.needSetTraffic = inputs.traffic !== undefined && functionConf.lastVersion
 
   if (tempFunctionConf.environment) {
-    functionConf.environment = inputs.functionConf.environment
+    functionConf.environment = tempFunctionConf.environment
+    functionConf.environment.variables = functionConf.environment.variables || {}
+    functionConf.environment.variables.SERVERLESS = '1'
+    functionConf.environment.variables.SLS_ENTRY_FILE = inputs.entryFile || CONFIGS.defaultEntryFile
+  } else {
+    functionConf.environment = {
+      variables: {
+        SERVERLESS: '1',
+        SLS_ENTRY_FILE: inputs.entryFile || CONFIGS.defaultEntryFile
+      }
+    }
   }
+
   if (tempFunctionConf.vpcConfig) {
-    functionConf.vpcConfig = inputs.functionConf.vpcConfig
+    functionConf.vpcConfig = tempFunctionConf.vpcConfig
   }
 
   // 对apigw inputs进行标准化
@@ -257,19 +268,22 @@ const prepareInputs = async (instance, credentials, inputs = {}) => {
     isDisabled: tempApigwConf.isDisabled === true,
     fromClientRemark: fromClientRemark,
     serviceName: inputs.serviceName || getDefaultServiceName(instance),
-    description: getDefaultServiceDescription(instance),
+    description: tempApigwConf.description || getDefaultServiceDescription(instance),
     protocols: tempApigwConf.protocols || ['http'],
     environment: tempApigwConf.environment ? tempApigwConf.environment : 'release',
     endpoints: [
       {
-        path: '/',
+        path: tempApigwConf.path || '/',
         enableCORS: tempApigwConf.enableCORS,
         serviceTimeout: tempApigwConf.serviceTimeout,
         method: 'ANY',
+        apiName: tempApigwConf.apiName || 'index',
         function: {
           isIntegratedResponse: true,
           functionName: functionConf.name,
-          functionNamespace: functionConf.namespace
+          functionNamespace: functionConf.namespace,
+          functionQualifier:
+            (tempApigwConf.function && tempApigwConf.function.functionQualifier) || '$LATEST'
         }
       }
     ],
