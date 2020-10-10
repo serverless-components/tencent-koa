@@ -263,15 +263,18 @@ const prepareInputs = async (instance, credentials, inputs = {}) => {
     ? inputs.apigwConfig
     : {}
   const apigatewayConf = Object.assign(tempApigwConf, {
-    serviceId: inputs.serviceId,
+    serviceId: inputs.serviceId || tempApigwConf.serviceId,
     region: regionList,
     isDisabled: tempApigwConf.isDisabled === true,
     fromClientRemark: fromClientRemark,
-    serviceName: inputs.serviceName || getDefaultServiceName(instance),
-    description: tempApigwConf.description || getDefaultServiceDescription(instance),
+    serviceName: inputs.serviceName || tempApigwConf.serviceName || getDefaultServiceName(instance),
+    serviceDesc: tempApigwConf.serviceDesc || getDefaultServiceDescription(instance),
     protocols: tempApigwConf.protocols || ['http'],
     environment: tempApigwConf.environment ? tempApigwConf.environment : 'release',
-    endpoints: [
+    customDomains: tempApigwConf.customDomains || []
+  })
+  if (!apigatewayConf.endpoints) {
+    apigatewayConf.endpoints = [
       {
         path: tempApigwConf.path || '/',
         enableCORS: tempApigwConf.enableCORS,
@@ -286,9 +289,8 @@ const prepareInputs = async (instance, credentials, inputs = {}) => {
             (tempApigwConf.function && tempApigwConf.function.functionQualifier) || '$LATEST'
         }
       }
-    ],
-    customDomains: tempApigwConf.customDomains || []
-  })
+    ]
+  }
   if (tempApigwConf.usagePlan) {
     apigatewayConf.endpoints[0].usagePlan = {
       usagePlanId: tempApigwConf.usagePlan.usagePlanId,
