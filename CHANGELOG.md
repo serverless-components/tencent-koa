@@ -1,3 +1,15 @@
+# [0.2.0](https://github.com/serverless-components/tencent-koa/compare/v0.1.0...v0.2.0) (2020-10-12)
+
+
+### Bug Fixes
+
+* support all parameters for apigw ([c3efa96](https://github.com/serverless-components/tencent-koa/commit/c3efa96be05122a62d31ece57cdcaa315fdfb228))
+
+
+### Features
+
+* support custom entry file ([38a93c4](https://github.com/serverless-components/tencent-koa/commit/38a93c44814f69f4f48a3512f617bb4a379a0515))
+
 # [0.1.0](https://github.com/serverless-components/tencent-koa/compare/v0.0.12...v0.1.0) (2020-09-28)
 
 
