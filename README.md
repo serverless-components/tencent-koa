@@ -18,7 +18,7 @@
 
 ### 1. 安装
 
-通过 npm 安装 serverless
+通过 npm 全局安装 [serverless cli](https://github.com/serverless/serverless)
 
 ```bash
 $ npm install -g serverless
@@ -26,47 +26,28 @@ $ npm install -g serverless
 
 ### 2. 创建
 
-本地创建 `serverless.yml` 文件：
+通过如下命令和模板链接，快速创建一个 koa 应用：
 
 ```bash
-$ touch serverless.yml
+$ serverless init koa-starter --name example
+$ cd example
 ```
 
-初始化一个新的 npm 包，并安装 koa:
+### 3. 部署
 
-```bash
-# 创建后持续回车
-$ npm init
+在 `serverless.yml` 文件所在的项目根目录，运行以下指令，将会弹出二维码，直接扫码授权进行部署：
 
-# 安装 koa
-$ npm i --save koa
+```
+serverless deploy
 ```
 
-创建一个 `sls.js`文件，并在其中创建您的 koa App：
+> **说明**：如果鉴权失败，请参考 [权限配置](https://cloud.tencent.com/document/product/1154/43006) 进行授权。
 
-```bash
-$ touch sls.js
-```
+### 4. 配置
 
-```js
-const koa = require('koa')
-const app = new koa()
+koa 组件支持 0 配置部署，也就是可以直接通过配置文件中的默认值进行部署。但你依然可以修改更多可选配置来进一步开发该 koa 项目。
 
-app.use(async (ctx, next) => {
-  if (ctx.path !== '/') return next()
-  ctx.body = 'Hello from Koa'
-})
-
-// set binary types
-// app.binaryTypes = [*/*];
-
-// don't forget to export!
-module.exports = app
-```
-
-### 3. 配置
-
-在 serverless.yml 中进行如下配置
+以下是 koa 组件的 `serverless.yml`配置示例：
 
 ```yml
 # serverless.yml
@@ -93,26 +74,12 @@ inputs:
 
 - [点击此处查看配置文档](https://github.com/serverless-components/tencent-koa/tree/master/docs/configure.md)
 
-### 4. 部署
-
-如您的账号未[登陆](https://cloud.tencent.com/login)或[注册](https://cloud.tencent.com/register)腾讯云，您可以直接通过`微信`扫描命令行中的二维码进行授权登陆和注册。
-
-通过`sls`命令进行部署，并可以添加`--debug`参数查看部署过程中的信息
-
-> 注：`sls`命令是`serverless`命令的缩写
-
-```
-$ sls deploy
-```
-
-部署完毕后，可以在浏览器中访问部署成功地 url。
-
 ### 5. 移除
 
 通过以下命令移除部署的 Koa 服务。
 
 ```
-$ sls remove
+$ serverless remove
 ```
 
 ### 账号配置（可选）
