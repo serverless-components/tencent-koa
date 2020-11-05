@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/serverless-components/tencent-koa/compare/v0.2.0...v0.3.0) (2020-11-05)
+
+
+### Features
+
+* add entryFile doc ([660d31c](https://github.com/serverless-components/tencent-koa/commit/660d31c7ffbbd909c2cfce291e22ea1ec5e89cd8))
+
 # [0.2.0](https://github.com/serverless-components/tencent-koa/compare/v0.1.0...v0.2.0) (2020-10-12)
 
 
