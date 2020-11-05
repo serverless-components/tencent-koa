@@ -17,6 +17,7 @@ inputs:
   serviceName: mytest # api网关服务名称
   runtime: Nodejs10.15 # 运行环境
   serviceId: service-np1uloxw # api网关服务ID
+  entryFile: sls.js # 自定义 server 的入口文件名，默认为 sls.js，如果不想修改文件名为 sls.js 可以自定义
   src: ./src # 第一种为string时，会打包src对应目录下的代码上传到默认cos上。
   # src:  # 第二种，部署src下的文件代码，并打包成zip上传到bucket上
   #   src: ./src  # 本地需要打包的文件目录
@@ -85,6 +86,7 @@ inputs:
 | functionName                         |    否    |                 | 云函数名称                                                          |
 | serviceName                          |    否    |                 | API 网关服务名称, 默认创建一个新的服务名称                          |
 | serviceId                            |    否    |                 | API 网关服务 ID,如果存在将使用这个 API 网关服务                     |
+| entryFile                            |  否  |    `sls.js`     | 自定义 server 的入口文件名                                          |
 | src                                  |    否    | `process.cwd()` | 默认为当前目录, 如果是对象, 配置参数参考 [执行目录](#执行目录)      |
 | layers                               |    否    |                 | 云函数绑定的 layer, 配置参数参考 [层配置](#层配置)                  |
 | [functionConf](#函数配置)            |    否    |                 | 函数配置                                                            |
