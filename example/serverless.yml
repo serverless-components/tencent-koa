@@ -1,7 +1,7 @@
 org: orgDemo
 app: appDemo
 stage: dev
-component: koa
+component: koa@dev
 name: koaDemo
 
 inputs:
@@ -10,8 +10,15 @@ inputs:
     exclude:
       - .env
   region: ap-guangzhou
-  runtime: Nodejs10.15
-  apigatewayConf:
+  faas:
+    name: ${name}
+    timeout: 10
+    memorySize: 128
+    # layers:
+    #   - name: test-layer
+    #     version: 1
+  apigw:
+    name: koa_demo
     protocols:
       - http
       - https
