@@ -1,7 +1,9 @@
-require('dotenv').config()
+const path = require('path')
+require('dotenv').config({
+  path: path.join(__dirname, '..', '.env.test')
+})
 const { generateId, getServerlessSdk } = require('./utils')
 const execSync = require('child_process').execSync
-const path = require('path')
 const axios = require('axios')
 
 // set enough timeout for deployment to finish
@@ -47,9 +49,14 @@ it('should successfully deploy koa app', async () => {
 
 it('should successfully update source code', async () => {
   // change source to own source './src' and need to install packages before deploy
-  const srcPath = path.join(__dirname, 'src')
+  const srcPath = path.join(__dirname, '..', 'example')
   execSync('npm install', { cwd: srcPath })
-  instanceYaml.inputs.src = srcPath
+  instanceYaml.inputs.src = {
+    src: srcPath,
+    exclude: [
+      '.env'
+    ]
+  }
 
   const instance = await sdk.deploy(instanceYaml, credentials)
   const response = await axios.get(instance.outputs.apigw.url)
