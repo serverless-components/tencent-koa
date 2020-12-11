@@ -86,7 +86,7 @@ inputs:
 | functionName                         |    否    |                 | 云函数名称                                                          |
 | serviceName                          |    否    |                 | API 网关服务名称, 默认创建一个新的服务名称                          |
 | serviceId                            |    否    |                 | API 网关服务 ID,如果存在将使用这个 API 网关服务                     |
-| entryFile                            |  否  |    `sls.js`     | 自定义 server 的入口文件名                                          |
+| entryFile                            |    否    |    `sls.js`     | 自定义 server 的入口文件名                                          |
 | src                                  |    否    | `process.cwd()` | 默认为当前目录, 如果是对象, 配置参数参考 [执行目录](#执行目录)      |
 | layers                               |    否    |                 | 云函数绑定的 layer, 配置参数参考 [层配置](#层配置)                  |
 | [functionConf](#函数配置)            |    否    |                 | 函数配置                                                            |
