@@ -1,3 +1,10 @@
+## [0.3.1](https://github.com/serverless-components/tencent-koa/compare/v0.3.0...v0.3.1) (2020-12-15)
+
+
+### Bug Fixes
+
+* update deploy and remove flow ([#42](https://github.com/serverless-components/tencent-koa/issues/42)) ([97e70ae](https://github.com/serverless-components/tencent-koa/commit/97e70aedf2818696d9409b180671e7fcb61a8169))
+
 # [0.3.0](https://github.com/serverless-components/tencent-koa/compare/v0.2.0...v0.3.0) (2020-11-05)
 
 
