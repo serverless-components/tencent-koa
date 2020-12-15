@@ -1,17 +1,12 @@
-require('dotenv').config()
-const { generateId, getServerlessSdk } = require('./utils')
+const { generateId, getServerlessSdk } = require('./lib/utils')
 const execSync = require('child_process').execSync
 const path = require('path')
 const axios = require('axios')
 
-// set enough timeout for deployment to finish
-jest.setTimeout(300000)
-
-// the yaml file we're testing against
 const instanceYaml = {
   org: 'orgDemo',
   app: 'appDemo',
-  component: 'koa',
+  component: 'koa@dev',
   name: `koa-integration-tests-${generateId()}`,
   stage: 'dev',
   inputs: {
@@ -21,7 +16,6 @@ const instanceYaml = {
   }
 }
 
-// get credentials from process.env
 const credentials = {
   tencent: {
     SecretId: process.env.TENCENT_SECRET_ID,
@@ -46,8 +40,7 @@ it('should successfully deploy koa app', async () => {
 })
 
 it('should successfully update source code', async () => {
-  // change source to own source './src' and need to install packages before deploy
-  const srcPath = path.join(__dirname, 'src')
+  const srcPath = path.join(__dirname, '..', 'example')
   execSync('npm install', { cwd: srcPath })
   instanceYaml.inputs.src = srcPath
 
