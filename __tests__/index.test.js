@@ -47,7 +47,7 @@ it('should successfully update source code', async () => {
   const instance = await sdk.deploy(instanceYaml, credentials)
   const response = await axios.get(instance.outputs.apigw.url)
 
-  expect(response.data).toEqual('Hello World')
+  expect(response.data).toContain('Serverless Framework')
   expect(instance.outputs.templateUrl).not.toBeDefined()
 })
 
