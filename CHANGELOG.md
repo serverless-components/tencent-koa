@@ -1,3 +1,10 @@
+## [0.3.2](https://github.com/serverless-components/tencent-koa/compare/v0.3.1...v0.3.2) (2020-12-28)
+
+
+### Bug Fixes
+
+* add sls initialize before creating  server ([9ce2692](https://github.com/serverless-components/tencent-koa/commit/9ce26922f15c904e3b6e8fc7061b823c36cb0f33))
+
 ## [0.3.1](https://github.com/serverless-components/tencent-koa/compare/v0.3.0...v0.3.1) (2020-12-15)
 
 
