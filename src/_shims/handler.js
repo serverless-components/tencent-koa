@@ -18,6 +18,10 @@ exports.handler = async (event, context) => {
   app.request.__SLS_EVENT__ = event
   app.request.__SLS_CONTEXT__ = context
 
+  if (app.slsInitialize && typeof app.slsInitialize === 'function') {
+    await app.slsInitialize()
+  }
+
   // cache server, not create repeatly
   if (!server) {
     server = createServer(app.callback(), null, app.binaryTypes || [])
@@ -25,10 +29,6 @@ exports.handler = async (event, context) => {
 
   context.callbackWaitsForEmptyEventLoop =
     app.callbackWaitsForEmptyEventLoop === true ? true : false
-
-  if (app.slsInitialize && typeof app.slsInitialize === 'function') {
-    await app.slsInitialize()
-  }
 
   const result = await proxy(server, event, context, 'PROMISE')
   return result.promise
