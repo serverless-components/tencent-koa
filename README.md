@@ -102,6 +102,32 @@ TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```
 
+### slsInitialize 应用初始化
+
+有些时候，Koa 服务在启动前，需要进行一个初始化操作，比如数据库建连，就可以通过在 Koa 实例对象上添加 `slsInitialize` 函数来实现，如下：
+
+```js
+const Koa = require('koa')
+const mysql = require('mysql2/promise')
+
+const app = new Koa()
+
+// ...
+
+app.slsInitialize = async () => {
+  app.db = await mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    database: 'test'
+  })
+}
+
+// don't forget to export!
+module.exports = app
+```
+
+这样应用部署到云函数后，在函数服务逻辑执行前，会先执行 `slsInitialize()` 函数，来初始化数据库连接。
+
 ### 还支持哪些组件？
 
 可以在 [Serverless Components](https://github.com/serverless/components) repo 中查询更多组件的信息。
