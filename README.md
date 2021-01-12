@@ -72,7 +72,8 @@ inputs:
     environment: release
 ```
 
-- [点击此处查看配置文档](https://github.com/serverless-components/tencent-koa/tree/master/docs/configure.md)
+- [点击此处查看配置文档](./docs/configure.md)
+- [点击此处查看输出文档](./docs/configure.md)
 
 ### 5. 移除
 
