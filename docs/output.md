@@ -8,8 +8,8 @@
 | :---------- | :-------------: | :----------------------------------------------------- | ---------------- |
 | templateUrl |     string      | 未提供代码时的模板代码 url                             |
 | region      |     string      | 地域信息（只有一个地域时才提供）                       |
-| scf         | [FunctionOutput | {string:FunctionOutput}](#云函数输出-`FunctionOutput`) | 云函数输出信息   |
-| apigw       |  [ApigwOutput   | {string:ApigwOutput}](#API-网关输出-`ApigwOutput`)     | API 网关输出信息 |
+| scf         | [`FunctionOutput | Record<string,FunctionOutput>`](#云函数输出-`FunctionOutput`) | 云函数输出信息   |
+| apigw       |  [`ApigwOutput   | Record<string:ApigwOutput>`](#API-网关输出-`ApigwOutput`)     | API 网关输出信息 |
 
 ## 云函数输出 `FunctionOutput`
 
