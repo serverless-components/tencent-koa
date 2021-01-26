@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/serverless-components/tencent-koa/compare/v0.3.2...v0.4.0) (2021-01-26)
+
+
+### Features
+
+* support apigw base64 encode ([#46](https://github.com/serverless-components/tencent-koa/issues/46)) ([d18d9b7](https://github.com/serverless-components/tencent-koa/commit/d18d9b787438d5a9430f6b8d66296cf98fd4b31e))
+
 ## [0.3.2](https://github.com/serverless-components/tencent-koa/compare/v0.3.1...v0.3.2) (2020-12-28)
 
 
