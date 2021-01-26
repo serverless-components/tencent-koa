@@ -2,8 +2,6 @@
 
 # 腾讯云 Koa 组件
 
-简体中文 | [English](https://github.com/serverless-components/tencent-koa/tree/master/README.en.md)
-
 ## 简介
 
 使用腾讯云 Koa 组件，可快速的在腾讯云创建，配置和管理一个 [Koa 框架](https://koajs.com/) 服务。
@@ -152,9 +150,9 @@ module.exports = app
 
 这样应用部署到云函数后，在函数服务逻辑执行前，会先执行 `slsInitialize()` 函数，来初始化数据库连接。
 
-### 还支持哪些组件？
+## 文件上传
 
-可以在 [Serverless Components](https://github.com/serverless/components) repo 中查询更多组件的信息。
+[文件上传教程](https://github.com/serverless-components/tencent-koa/tree/master/docs/upload.md)
 
 ## License
 

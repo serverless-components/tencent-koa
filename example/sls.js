@@ -5,6 +5,8 @@ const path = require('path')
 
 const app = new Koa()
 const router = new KoaRouter()
+const isServerless = process.env.SERVERLESS
+const PORT = 3000
 
 // Routes
 router.get(`/*`, async (ctx) => {
@@ -14,4 +16,10 @@ router.get(`/*`, async (ctx) => {
 app.use(router.allowedMethods()).use(router.routes())
 
 // don't forget to export!
-module.exports = app
+if (isServerless) {
+  module.exports = app
+} else {
+  app.listen(PORT, () => {
+    console.log(`Server start on http://localhost:${PORT}`)
+  })
+}
