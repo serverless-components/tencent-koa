@@ -26,7 +26,7 @@ const credentials = {
 // get serverless construct sdk
 const sdk = getServerlessSdk(instanceYaml.org)
 
-it('should successfully deploy koa app', async () => {
+it('deploy koa app by template', async () => {
   const instance = await sdk.deploy(instanceYaml, credentials)
   expect(instance).toBeDefined()
   expect(instance.instanceName).toEqual(instanceYaml.name)
@@ -39,7 +39,7 @@ it('should successfully deploy koa app', async () => {
   expect(instance.outputs.apigw.environment).toEqual(instanceYaml.inputs.apigatewayConf.environment)
 })
 
-it('should successfully update source code', async () => {
+it('deploy with src code', async () => {
   const srcPath = path.join(__dirname, '..', 'example')
   execSync('npm install', { cwd: srcPath })
   instanceYaml.inputs.src = srcPath
@@ -51,7 +51,7 @@ it('should successfully update source code', async () => {
   expect(instance.outputs.templateUrl).not.toBeDefined()
 })
 
-it('should successfully remove koa app', async () => {
+it('remove koa app', async () => {
   await sdk.remove(instanceYaml, credentials)
   result = await sdk.getInstance(instanceYaml.org, instanceYaml.stage, instanceYaml.app, instanceYaml.name)
 
